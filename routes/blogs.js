@@ -6,8 +6,14 @@ const ExpressError = require('../utils/ExpressError');
 const { blogSchema, reviewSchema } = require('../schemas');
 
 router.route('/').get( async(req, res) =>{
-    const blogs = await Blog.find({});
-    res.render('blogs/index', { blogs })
+    if (!req.isAuthenticated()) {
+        return res.redirect('/login');
+    }
+    else{
+        const blogs = await Blog.find({});
+        res.render('blogs/index', { blogs })
+    }
+   
 })
 
 

@@ -61,15 +61,16 @@ router.route('/report').get( async(req, res) => {
         const updatedblog = await blog_populate(blogs[i]._id);
         blog_list.push(updatedblog);
     }
-
+    var trend_sum = 0;
+    var trending = [];
     for(var i =0; i < blog_list.length; i++){
         var rating = [];
         var sum = 0;
 
         for(var j =0; j<blog_list[i].reviews.length; j++){
-            rating.push(blog_list[i].reviews[j].rating);
-            console.log(blog_list[i].reviews[j].rating);
-            sum += blog_list[i].reviews[j].rating;
+            var rate = blog_list[i].reviews[j].rating;
+            rating.push(rate);
+            sum += rate;
         }
 
         if(rating.length != 0){
@@ -82,6 +83,10 @@ router.route('/report').get( async(req, res) => {
             blog_list[i].max_rating = max;
             blog_list[i].min_rating = min;
             blog_list[i].avg_rating = avg;
+
+            var trend = (avg * 0.60 + rating.length * 0.40 ) / 2;
+            trending.push(trend);
+            trend_sum += trend;
     
         }
         else{
@@ -92,7 +97,9 @@ router.route('/report').get( async(req, res) => {
         }
     }
 
-    res.render('users/report', {blog_list : blog_list, email : email, username : username});
+    var trend_max = trend_sum / blog_list.length;
+
+    res.render('users/report', {blog_list : blog_list, email : email, username : username, trend_max : trend_max});
 
 })
 
@@ -107,10 +114,15 @@ router.route('/search').post(async (req, res) => {
         res.send(`<h1>No Blogs by Author - ${author_name}</h1><br><button><a href="/blogs">GO TO HOME</a></button>`);
     }
      
-
     console.log("user :", user_id);
     const blogs = await Blog.find({author : user_id});
     res.render('blogs/search', { blogs })
+})
+
+router.route('/myblogs').get(async(req, res) => {
+    const user_id = req.user._id;
+    const blogs = await Blog.find({author : user_id})
+    res.render('blogs/userblog', {blogs})
 })
 
 module.exports  = router;
