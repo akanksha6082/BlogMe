@@ -1,6 +1,7 @@
 <% layout('layouts/boilerplate')%>
+<link rel="stylesheet" href="stylesheets/style.css">
 <div class="row">
-    <h1 class="text-center">Edit Blog</h1>
+    <h1 class="text-center heading">Edit Blog</h1>
     <div class="col-6 offset-3">
         <form action="/blogs/<%=blog._id%>?_method=PUT" method="POST">
             <div class="mb-3">
@@ -25,7 +26,7 @@
                 value="<%=blog.description %>" required><%= blog.description%></textarea>
             </div>
             <div class="mb-3">
-                <button class="btn btn-info">Update Blog</button>
+                <button class="btn mybtn btn-info">Update Blog</button>
             </div>
         </form>
         <a href="/blogs/<%= blog._id%>">Go Back</a>

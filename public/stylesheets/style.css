@@ -1,9 +1,10 @@
 body{
     margin: 0;    padding: 0;
     background-image: url("/images/bg.jpg");
+    background-attachment: fixed;
     background-size: cover;
     background-repeat: no-repeat;
-    background-position: center;    
+    background-position: top;    
 }
 .navbar{
     /* position: fixed; */
@@ -29,10 +30,27 @@ body{
     color: aliceblue;
     font-weight: bold;
 }
+.img-fluid {
+    max-width: 160px;
+    max-height: 111px;
+    margin: 0 auto;
+    margin-top: 8px;
+    margin-left: 8px;
+}
+#mybtn{
+    border: none;
+    text-align: center;
+    background-color: #343a40;
+    color: aliceblue;
+    font-weight: bold;
+    width: 100%;
+    margin: 0 auto;
+}
 #navclr > .navbar-nav > .nav-link{
     color: #343a40;
     font-size:1.2em;
     font-weight: bold;
+    margin: auto;
 }
 #brand{
     color: #f8c602;
@@ -64,18 +82,24 @@ body{
 }    
 .card{
     max-width: 32%;
-    min-height: 200px;
+    min-height: 220px;
     max-width: 200px;
     float: left;
     margin: 3px 0.5%;
-    overflow: auto;
+    overflow: hidden;
     padding: 0 0;
 }
 #carr{
-    margin: 0 0 ;
     padding: 0 0 ;
     min-width: 32%;
     max-width: 32%;
+}
+#cardup{
+    background-color: #f3f8ff;
+}
+#carddwn{
+    padding-top: 20px;
+    background-color: #1053b7;
 }
 .read{    
     width: 100%;
@@ -85,3 +109,18 @@ body{
     vertical-align: bottom;
     bottom: 0;    
 }
+@media only screen and (max-width: 996px) {
+    #carr{
+        padding: 0 0 ;
+        min-width: 47%;
+        max-width: 47%;
+    }.card{
+        max-width: 47%;
+        min-height: 220px;
+        max-width: 200px;
+        float: left;
+        margin: 3px 0.5%;
+        overflow: hidden;
+        padding: 0 0;
+    }
+  }

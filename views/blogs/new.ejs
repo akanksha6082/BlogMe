@@ -1,6 +1,7 @@
 <% layout('layouts/boilerplate')%>
+<link rel="stylesheet" href="stylesheets/style.css">
 <div class="row">
-    <h1 class="text-center">New Blog</h1>
+    <h1 class="text-center heading">New Blog</h1>
     <div class="col-6 offset-3">
         <form action="/blogs" method="POST">
             <div class="mb-3">
@@ -25,7 +26,7 @@
                     required></textarea>
             </div>
             <div class="mb-3">
-                <button class="btn btn-success">Add Blog</button>
+                <button id="mybtn" class="btn btn-success ">Add Blog</button>
             </div>
         </form>
         <a href="/blogs">All Blogs</a>

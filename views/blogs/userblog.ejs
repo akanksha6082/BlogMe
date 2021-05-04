@@ -1,6 +1,7 @@
 <% layout('layouts/boilerplate')%>
+<link rel="stylesheet" href="stylesheets/style.css">
 
-<h1>Own Blog Space</h1>
+<h1 class="heading">Own Blog Space</h1>
 <div>
     <a href="/blogs/new"><button class="btn btn-primary btn-md ">Add Blog</button></a>
 </div>
@@ -18,7 +19,7 @@
                 <p class="card-text">
                     <small class="text-muted"><%= blog.location%></small>
                 </p>
-                <a class="btn btn-primary" href="/blogs/<%=blog._id%>">View <%=blog.title%></a>
+                <a class="btn mybtn btn-primary" href="/blogs/<%=blog._id%>">View <%=blog.title%></a>
             </div>
         </div>
     </div>
