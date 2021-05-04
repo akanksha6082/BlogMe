@@ -124,3 +124,30 @@ body{
         padding: 0 0;
     }
   }
+  
+@media only screen and (max-width: 773px) {
+    #carr{
+        padding: 0 0 ;
+        min-width: 100%;
+        max-width: 100%;
+    }.card{
+        max-width: 100%;
+        /* min-height: 220px; */
+        width: max-content;
+        max-width: 400px;
+        float: left;
+        /* margin: 3px 0.5%;
+         */
+         margin: 5px auto;
+        overflow: hidden;
+        padding: 0 0;
+    }
+    .card *{
+        text-align: center;
+    }
+    .img-fluid{
+        width: 100%;
+        height: auto;
+    }
+
+  }
