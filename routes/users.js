@@ -96,4 +96,21 @@ router.route('/report').get( async(req, res) => {
 
 })
 
+
+router.route('/search').post(async (req, res) => {
+    const author_name = req.body.search;
+    var user= await User.findOne({username : author_name});
+    if(user){
+        var user_id = user._id;
+    }
+    else{
+        res.send(`<h1>No Blogs by Author - ${author_name}</h1><br><button><a href="/blogs">GO TO HOME</a></button>`);
+    }
+     
+
+    console.log("user :", user_id);
+    const blogs = await Blog.find({author : user_id});
+    res.render('blogs/search', { blogs })
+})
+
 module.exports  = router;
