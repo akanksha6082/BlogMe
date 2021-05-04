@@ -16,7 +16,12 @@ const BlogSchema = new Schema({
             type: Schema.Types.ObjectId,
             ref: 'Review'
         }
-    ]
+    ],
+    date : {
+        type : Date,
+        default : Date.now,
+        unmodifiable : true,
+    }
 });
 
 BlogSchema.post('findOneAndDelete', async function (doc) {
