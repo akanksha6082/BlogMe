@@ -31,7 +31,9 @@ body{
     font-weight: bold;
 }
 .img-fluid {
-    max-width: 160px;
+    min-width: 100%;
+    max-width: 160px;    
+    min-height: 120%;
     max-height: 111px;
     margin: 0 auto;
     margin-top: 8px;
@@ -96,6 +98,7 @@ body{
 }
 #cardup{
     background-color: #f3f8ff;
+    overflow: hidden;
 }
 #carddwn{
     padding-top: 20px;
@@ -108,6 +111,20 @@ body{
     margin: 0 0;
     vertical-align: bottom;
     bottom: 0;    
+}
+#show{
+    min-width: 100%;
+    margin-bottom: 100px;
+}#review{
+    margin: 0 auto;
+    margin-bottom: 100px;
+}
+#report{
+    margin: 0 auto;
+    width: 80%;
+}#repBody{
+    background-color: #f8c602;
+    min-width:80 ;
 }
 @media only screen and (max-width: 996px) {
     #carr{
@@ -125,13 +142,13 @@ body{
     }
   }
   
-@media only screen and (max-width: 773px) {
+@media (max-width: 773px) {
     #carr{
         padding: 0 0 ;
         min-width: 100%;
         max-width: 100%;
     }.card{
-        max-width: 100%;
+        max-width: 70%;
         /* min-height: 220px; */
         width: max-content;
         max-width: 400px;
@@ -151,3 +168,29 @@ body{
     }
 
   }
+  @media (max-width: 768px) {
+      #carr{
+          padding: 0 0 ;
+          min-width: 100%;
+          max-width: 100%;
+      }.card{
+          max-width: 70%;
+          /* min-height: 220px; */
+          width: max-content;
+          max-width: 400px;
+          float: left;
+          /* margin: 3px 0.5%;
+           */
+           margin: 5px auto;
+          overflow: hidden;
+          padding: 0 0;
+      }
+      .card *{
+          text-align: center;
+      }
+      .img-fluid{
+          width: 100%;
+          height: auto;
+      }
+  
+    }

@@ -8,11 +8,11 @@
 <h3> Total no of blogs - <%= blog_list.length %> </h3>
 <% for (let blog of blog_list){%>
 <div class="card" mb-3>
-    <div class="row">
-        <div class="col-md-4">
+    <div class="row" id="report">
+        <div id="show">
             <img class="img-fluid" alt="" src="<%=blog.image%>">
         </div>
-        <div class="col-md-8">
+        <div id="repBody">
             <div class="card-body">
                 <h2 class="card-title">
                     <%= blog.title %>
@@ -27,7 +27,7 @@
                 <h5> Average Rating - <%= blog.avg_rating%></h5>
                 <br>
                 <h5>Date of creation - <%= blog.date %></h5>
-                <a class="btn btn-primary" href="/blogs/<%=blog._id%>">View <%=blog.title%></a>
+                <a id="mybtn" class="btn btn-primary" href="/blogs/<%=blog._id%>">View <%=blog.title%></a>
             </div>
         </div>
     </div>
