@@ -1,0 +1,25 @@
+<% layout('layouts/boilerplate')%>
+<link rel="stylesheet" href="stylesheets/style.css">
+<h1> ALL BLOGS</h1>
+<br>
+<% for (let blog of blogs){%>
+<div id="carr" class="card">
+    <div class="row">
+        <div class="col-md-6">
+            <img class="img-fluid" alt="" src="<%=blog.image%>">
+        </div>
+        <div class="col-md-6">
+            <div class="card-body">
+                <h5 class="card-title"><%= blog.title %> </h5>
+                <p class="card-text"><%= blog.description %></p>
+                <p class="card-text">
+                    <small class="text-muted"><%= blog.location%></small>
+                </p>
+            </div>
+        </div>      
+        <div class="read">
+        <a class="btn mybtn btn-primary" href="/blogs/<%=blog._id%>">View <%=blog.title%></a>  
+        </div>            
+    </div>
+</div>
+<% }%>

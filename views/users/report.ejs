@@ -1,0 +1,35 @@
+<% layout('layouts/boilerplate')%>
+
+<h1>Know Your Stats</h1>
+<br>
+<h3>Username - <%= username %></h3>
+<h3>Email - <%= email%> </h3>
+
+<h3> Total no of blogs - <%= blog_list.length %> </h3>
+<% for (let blog of blog_list){%>
+<div class="card" mb-3>
+    <div class="row">
+        <div class="col-md-4">
+            <img class="img-fluid" alt="" src="<%=blog.image%>">
+        </div>
+        <div class="col-md-8">
+            <div class="card-body">
+                <h2 class="card-title">
+                    <%= blog.title %>
+                    <span><% if( (blog.avg_rating * 0.60 + blog.reviews.length * 0.40) /2 >= trend_max ){%> 
+                        <b style = "color: red;">Trending</b>
+                    <%} %><span> 
+                </h2>
+               
+                <h5> No of comments/Reviews - <%= blog.reviews.length%></h5>
+                <h5> Max Rating - <%= blog.max_rating %></h5>
+                <h5> Min Rating - <%= blog.min_rating %></h5>
+                <h5> Average Rating - <%= blog.avg_rating%></h5>
+                <br>
+                <h5>Date of creation - <%= blog.date %></h5>
+                <a class="btn btn-primary" href="/blogs/<%=blog._id%>">View <%=blog.title%></a>
+            </div>
+        </div>
+    </div>
+</div>
+<% }%>

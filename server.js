@@ -48,8 +48,9 @@ const sessionConfig = {
 
 
 const userRoutes = require('./routes/users');
-const campgroundRoutes = require('./routes/campgrounds');
+const blogRoutes = require('./routes/blogs');
 const reviewRoutes = require('./routes/reviews');
+
 
 
 app.use(session(sessionConfig))
@@ -72,8 +73,9 @@ app.use((req, res, next) => {
 
 
 app.use('/', userRoutes);
-app.use('/campgrounds', campgroundRoutes)
-app.use('/campgrounds/:id/reviews', reviewRoutes)
+app.use('/blogs', blogRoutes);
+app.use('/blogs/:id/reviews', reviewRoutes)
+
 app.listen(port, () => {
     console.log(`Server is running on port: ${port}`);
 })

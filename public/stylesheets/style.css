@@ -1,0 +1,87 @@
+body{
+    margin: 0;    padding: 0;
+    background-image: url("/images/bg.jpg");
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;    
+}
+.navbar{
+    /* position: fixed; */
+    top: 0;
+}
+
+#welcome{
+    text-align: center;
+    font-size: 70px;
+    color: rgb(20, 22, 22);
+    margin: 0 auto;
+    margin-top: 20vh;
+}
+
+.heading{
+    text-align: center;
+    color: #1053b7;
+}
+.mybtn{
+    border: none;
+    text-align: center;
+    background-color: #343a40;
+    color: aliceblue;
+    font-weight: bold;
+}
+#navclr > .navbar-nav > .nav-link{
+    color: #343a40;
+    font-size:1.2em;
+    font-weight: bold;
+}
+#brand{
+    color: #f8c602;
+    font-size:1.3em;
+    font-weight: bold;
+}
+.footer{
+    background-color: #1053b7;
+    position: fixed;
+    padding: 1px 1px;
+    width: 100%;
+    bottom: 0px;
+}.text-muted{    
+    color: black;
+}
+#navclr > .navbar-nav > .nav-link:hover{
+    color: #1053b7;
+    font-weight: bold;
+}
+
+.register , .login{
+    margin: 0 auto;
+    color: #1053b7;
+    font-weight: bold;
+}
+
+.register > h1, .login > h1{
+    text-align: center;
+}    
+.card{
+    max-width: 32%;
+    min-height: 200px;
+    max-width: 200px;
+    float: left;
+    margin: 3px 0.5%;
+    overflow: auto;
+    padding: 0 0;
+}
+#carr{
+    margin: 0 0 ;
+    padding: 0 0 ;
+    min-width: 32%;
+    max-width: 32%;
+}
+.read{    
+    width: 100%;
+    text-align: center;
+    padding: 0px 0px;
+    margin: 0 0;
+    vertical-align: bottom;
+    bottom: 0;    
+}
