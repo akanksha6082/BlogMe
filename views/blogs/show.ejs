@@ -25,7 +25,7 @@
 
     </div>
     <div class="col-6">
-        <% if(currentUser){ %>
+        <% if(currentUser && !blog.author.equals(currentUser._id)){ %>
         <h2>Review</h2>
         <form action="/blogs/<%=blog._id%>/reviews" method="POST" class="mb-3">
             <fieldset class="starability-basic">
@@ -44,7 +44,7 @@
             </fieldset>
             <div class="mb-3">
                 <label class="form-label" for="body">Review Text</label>
-                <textarea class="form-control" name="review[body]" id="body" cols="30" rows="3" required></textarea>
+                <textarea rows="10" class="form-control" name="review[body]" id="body" cols="30" rows="3" required></textarea>
                 <div class="valid-feedback">
                     Looks good!
                 </div>

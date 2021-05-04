@@ -16,7 +16,7 @@
             <div class="card-body">
                 <h2 class="card-title">
                     <%= blog.title %>
-                    <span><% if( (blog.avg_rating * 0.60 + blog.reviews.length * 0.40) /2 >= trend_max ){%> 
+                    <span><% if( (blog.avg_rating * 0.60 + blog.reviews.length * 0.40) /2 > trend_max ){%> 
                         <b style = "color: red;">Trending</b>
                     <%} %><span> 
                 </h2>
