@@ -29,6 +29,9 @@
 <link rel="stylesheet" href="stylesheets/style.css">
 <h1 class="heading"> SEARCH RESULTS</h1>
 <br>
+<% if(blogs.length == 0){%>
+    <h1>Sorry, No Blogs Found !</h1>
+<%}%>
 <% for (let blog of blogs){%>
 <div id="carr" class="card">
     <div class="row " id="cardup">
