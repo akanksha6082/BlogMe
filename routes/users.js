@@ -111,7 +111,7 @@ router.route('/search').post(async (req, res) => {
         var user_id = user._id;
     }
     else{
-        res.send(`<h1>No Blogs by Author - ${author_name}</h1><br><button><a href="/blogs">GO TO HOME</a></button>`);
+        res.render('blogs/search', { blogs : [] })
     }
      
     console.log("user :", user_id);

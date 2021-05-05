@@ -1,33 +1,35 @@
 <% layout('layouts/boilerplate')%>
-
-<h1>Know Your Stats</h1>
+<div style="margin: 3px auto; margin-left: 25%;">
+<h1 style="color: red;"><u>Know Your Stats</u></h1>
 <br>
 <h3>Username - <%= username %></h3>
 <h3>Email - <%= email%> </h3>
 
 <h3> Total no of blogs - <%= blog_list.length %> </h3>
+</div>
 <% for (let blog of blog_list){%>
-<div class="card" mb-3>
+<div class="card" style="min-width: 80%; margin: 0 auto; margin-left: 10%;" mb-3>
     <div class="row" id="report">
-        <div id="show">
+        <div style="margin-bottom: 20px ;" id="repImg">
             <img class="img-fluid" alt="" src="<%=blog.image%>">
         </div>
         <div id="repBody">
             <div class="card-body">
+                <br>
                 <h2 class="card-title">
                     <%= blog.title %>
-                    <span><% if( (blog.avg_rating * 0.60 + blog.reviews.length * 0.40) /2 >= trend_max ){%> 
+                    <span><% if( (blog.avg_rating * 0.60 + blog.reviews.length * 0.40) /2 > trend_max ){%> 
                         <b style = "color: red;">Trending</b>
                     <%} %><span> 
                 </h2>
                
                 <h5> No of comments/Reviews - <%= blog.reviews.length%></h5>
-                <h5> Max Rating - <%= blog.max_rating %></h5>
-                <h5> Min Rating - <%= blog.min_rating %></h5>
-                <h5> Average Rating - <%= blog.avg_rating%></h5>
+                <h5 style="color: green;"> Max Rating - <%= blog.max_rating %></h5>
+                <h5 style="color: red;"> Min Rating - <%= blog.min_rating %></h5>
+                <h5 style="color: rgb(255, 238, 0);"> Average Rating - <%= blog.avg_rating%></h5>
                 <br>
                 <h5>Date of creation - <%= blog.date %></h5>
-                <a id="mybtn" class="btn btn-primary" href="/blogs/<%=blog._id%>">View <%=blog.title%></a>
+                <a id="mybtn" class="btn btn-primary" href="/blogs/<%=blog._id%>">Read Blog</a>
             </div>
         </div>
     </div>

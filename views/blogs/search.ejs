@@ -1,3 +1,4 @@
+<!-- 
 <% layout('layouts/boilerplate')%>
 <link rel="stylesheet" href="stylesheets/style.css">
 
@@ -16,12 +17,45 @@
                 <p class="card-text">
                     <small class="text-muted"><%= blog.location%></small>
                 </p>
-                <a class="btn mybtn btn-primary" href="/blogs/<%=blog._id%>">View <%=blog.title%></a>
+                <a class="btn mybtn btn-primary" href="/blogs/<%=blog._id%>">View Blog</a>
             </div>
         </div>
     </div>
 </div>
+<% }%> --> 
+
+
+<% layout('layouts/boilerplate')%>
+<link rel="stylesheet" href="stylesheets/style.css">
+<h1 class="heading"> SEARCH RESULTS</h1>
+<br>
+<% if(blogs.length == 0){%>
+    <h1>Sorry, No Blogs Found !</h1>
+<%}%>
+<% for (let blog of blogs){%>
+<div id="carr" class="card">
+    <div class="row " id="cardup">
+        <div class="col-md-6" style="height: 100px;">
+            <img class="img-fluid" alt="" src="<%=blog.image%>">
+        </div>
+        <div class="col-md-6"style="height: 100px;">
+            <div class="card-body">
+                <h5 class="card-title"><%= blog.title %> </h5>
+                <!-- <p class="card-text"><%= blog.description %></p> -->
+                <p class="card-text">
+                    <small class="text-muted">Date: <%= blog.date.getDate() %>/<%= blog.date.getMonth() + 1 %>/<%= blog.date.getFullYear() %></small>
+                </p>
+            </div>
+        </div>     
+    </div>     
+    <div class="row craddwn">
+        <div class="read">
+            <a style="margin-top: 10px;" class="btn mybtn btn-primary" href="/blogs/<%=blog._id%>"> Read blog</a>  
+        </div>  
+    </div>              
+</div>
 <% }%>
+
 <div>
     <a href="/blogs"><button id="mybtn"  class="btn btn-primary btn-md ">Go to Home</button></a>
 </div>

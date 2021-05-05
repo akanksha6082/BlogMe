@@ -22,14 +22,14 @@
          
             <div class="mb-3">
                 <label class="form-label" for="description">Content</label>
-                <textarea class="form-control" type="text" id="description" name="blog[description]"
+                <textarea ros="20" class="form-control" type="text" id="description" name="blog[description]"
                 value="<%=blog.description %>" required><%= blog.description%></textarea>
             </div>
             <div class="mb-3">
                 <button id="mybtn"  class="btn mybtn btn-info">Update Blog</button>
             </div>
         </form>
-        <a href="/blogs/<%= blog._id%>">Go Back</a>
+        <a id="mybtn" style="margin-bottom: 50px;" class="btn" href="/blogs/<%= blog._id%>">Go Back</a>
 
     </div>
 </div>
