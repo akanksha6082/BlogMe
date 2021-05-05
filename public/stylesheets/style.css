@@ -1,0 +1,197 @@
+body{
+    margin: 0;    padding: 0;
+    background-image: url("/images/bg.jpg");
+    background-attachment: fixed;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: top;    
+}
+.navbar{
+    /* position: fixed; */
+    top: 0;
+}
+
+#welcome{
+    text-align: center;
+    font-size: 70px;
+    color: rgb(20, 22, 22);
+    margin: 0 auto;
+    margin-top: 20vh;
+}
+
+.heading{
+    text-align: center;
+    color: #1053b7;
+}
+.mybtn{
+    border: none;
+    text-align: center;
+    background-color: #343a40;
+    color: aliceblue;
+    font-weight: bold;
+    margin-top: 20px; /*added new */
+}
+.img-fluid {
+    min-width: 100%;
+    max-width: 160px;    
+    min-height: 120%;
+    max-height: 111px;
+    margin: 0 auto;
+    margin-top: 8px;
+    margin-left: 8px;
+}
+#mybtn{
+    border: none;
+    text-align: center;
+    background-color: #343a40;
+    color: aliceblue;
+    font-weight: bold;
+    width: 100%;
+    margin: 0 auto;
+}
+#navclr > .navbar-nav > .nav-link{
+    color: #343a40;
+    font-size:1.2em;
+    font-weight: bold;
+    margin: auto;
+}
+#brand{
+    color: #f8c602;
+    font-size:1.3em;
+    font-weight: bold;
+}
+.footer{
+    background-color: #1053b7;
+    position: fixed;
+    padding: 1px 1px;
+    width: 100%;
+    bottom: 0px;
+}.text-muted{    
+    color: black;
+}
+#navclr > .navbar-nav > .nav-link:hover{
+    color: #1053b7;
+    font-weight: bold;
+}
+
+.register , .login{
+    margin: 0 auto;
+    color: #1053b7;
+    font-weight: bold;
+}
+
+.register > h1, .login > h1{
+    text-align: center;
+}    
+.card{
+    max-width: 32%;
+    min-height: 220px;
+    max-width: 200px;
+    float: left;
+    margin: 3px 0.5%;
+    overflow: hidden;
+    padding: 0 0;
+}
+#carr{
+    padding: 0 0 ;
+    min-width: 32%;
+    max-width: 32%;
+}
+#cardup{
+    background-color: #f3f8ff;
+    overflow: hidden;
+}
+#carddwn{
+    padding-top: 20px;
+    background-color: #1053b7;
+}
+.read{    
+    width: 100%;
+    text-align: center;
+    padding: 0px 0px;
+    margin: 0 0;
+    vertical-align: bottom;
+    bottom: 0;    
+}
+#show{
+    min-width: 100%;
+    margin-bottom: 100px;
+}#review{
+    margin: 0 auto;
+    margin-bottom: 100px;
+}
+#report{
+    margin: 0 auto;
+    width: 80%;
+}#repBody{
+    background-color: #f8c602;
+    min-width:80 ;
+}
+@media only screen and (max-width: 996px) {
+    #carr{
+        padding: 0 0 ;
+        min-width: 47%;
+        max-width: 47%;
+    }.card{
+        max-width: 47%;
+        min-height: 220px;
+        max-width: 200px;
+        float: left;
+        margin: 3px 0.5%;
+        overflow: hidden;
+        padding: 0 0;
+    }
+  }
+  
+@media (max-width: 773px) {
+    #carr{
+        padding: 0 0 ;
+        min-width: 100%;
+        max-width: 100%;
+    }.card{
+        max-width: 70%;
+        /* min-height: 220px; */
+        width: max-content;
+        max-width: 400px;
+        float: left;
+        /* margin: 3px 0.5%;
+         */
+         margin: 5px auto;
+        overflow: hidden;
+        padding: 0 0;
+    }
+    .card *{
+        text-align: center;
+    }
+    .img-fluid{
+        width: 100%;
+        height: auto;
+    }
+
+  }
+  @media (max-width: 768px) {
+      #carr{
+          padding: 0 0 ;
+          min-width: 100%;
+          max-width: 100%;
+      }.card{
+          max-width: 70%;
+          /* min-height: 220px; */
+          width: max-content;
+          max-width: 400px;
+          float: left;
+          /* margin: 3px 0.5%;
+           */
+           margin: 5px auto;
+          overflow: hidden;
+          padding: 0 0;
+      }
+      .card *{
+          text-align: center;
+      }
+      .img-fluid{
+          width: 100%;
+          height: auto;
+      }
+  
+    }

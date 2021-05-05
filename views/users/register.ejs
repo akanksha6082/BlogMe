@@ -1,9 +1,8 @@
 <% layout('layouts/boilerplate')%>
-
-<div style = "width: 80%; margin-top: 200px;" class="container">
-    <form style= "width: 50%; margin-left: 25%;" action="/register" method="POST">
+<link rel="stylesheet" href="stylesheets/style.css">
+<div style = "width: 80%; " class="container">
+    <form class="register" style= "width: 400px; " action="/register" method="POST">
         <h1>REGISTER</h1>
-
         
         <div class="mb-3">
             <label class="form-label" for="username">Username</label>
@@ -17,7 +16,6 @@
             <label class="form-label" for="password">Password</label>
             <input class="form-control" type="password" id="password" name="password" required>
         </div>
-        <button class="btn btn-primary btn-block">Register</button>
+        <button class="btn mybtn btn-primary btn-block">Register</button>
     </form>
 </div>
-

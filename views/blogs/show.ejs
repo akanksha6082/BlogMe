@@ -2,8 +2,10 @@
 <link rel="stylesheet" href="/stylesheets/stars.css">
 
 <div class="row">
-    <div class="col-6">
-        <div class="card mb-3">
+    <div style="
+    width: 85%;
+    margin: 0 auto; ">
+        <div id="show" class="card mb-3">
             <img src="<%= blog.image%>" class="card-img-top" alt="...">
             <div class="card-body">
                 <h5 class="card-title"><%= blog.title%></h5>
@@ -17,15 +19,14 @@
             <div class="card-body">
                 <a class="card-link btn btn-info" href="/blogs/<%=blog._id%>/edit">Edit</a>
                 <form class="d-inline" action="/blogs/<%=blog._id%>?_method=DELETE" method="POST">
-                    <button class="btn btn-danger">Delete</button>
+                    <button id="mybtn" class="btn btn-danger">Delete</button>
                 </form>
             </div>
             <% } %>
-        </div>
-
-    </div>
-    <div class="col-6">
-        <% if(currentUser && !blog.author.equals(currentUser._id)){ %>
+    
+        </div>        
+    <div class="col-6" id="review">
+        <% if(currentUser){ %>
         <h2>Review</h2>
         <form action="/blogs/<%=blog._id%>/reviews" method="POST" class="mb-3">
             <fieldset class="starability-basic">
@@ -44,12 +45,12 @@
             </fieldset>
             <div class="mb-3">
                 <label class="form-label" for="body">Review Text</label>
-                <textarea rows="10" class="form-control" name="review[body]" id="body" cols="30" rows="3" required></textarea>
+                <textarea rows="7" class="form-control" name="review[body]" id="body" cols="30" rows="3" required></textarea>
                 <div class="valid-feedback">
                     Looks good!
                 </div>
             </div>
-            <button class="btn btn-success">Submit</button>
+            <button id="mybtn"  class="btn btn-success">Submit</button>
         </form>
         <% } %>
         <% for(let review of blog.reviews) { %>
@@ -63,11 +64,13 @@
                 <p class="card-text">Review: <%= review.body %></p>
                 <%  if( currentUser && review.author.equals(currentUser._id))  {%>
                 <form action="/blogs/<%=blog._id%>/reviews/<%=review._id%>?_method=DELETE" method="POST">
-                    <button class="btn btn-sm btn-danger">Delete</button>
+                    <button id="mybtn" class="btn btn-sm btn-danger">Delete</button>
                 </form>
                 <% } %>
             </div>
         </div>
         <% } %>
     </div>
+</div>
+
 </div>

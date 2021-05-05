@@ -1,23 +1,27 @@
 <% layout('layouts/boilerplate')%>
-
-<h1> ALL BLOGS</h1>
+<link rel="stylesheet" href="stylesheets/style.css">
+<h1 class="heading"> ALL BLOGS</h1>
 <br>
 <% for (let blog of blogs){%>
-<div class="card" mb-3>
-    <div class="row">
-        <div class="col-md-4">
+<div id="carr" class="card">
+    <div class="row " id="cardup">
+        <div class="col-md-6" style="height: 100px;">
             <img class="img-fluid" alt="" src="<%=blog.image%>">
         </div>
-        <div class="col-md-8">
+        <div class="col-md-6"style="height: 100px;">
             <div class="card-body">
                 <h5 class="card-title"><%= blog.title %> </h5>
-                <p class="card-text"><%= blog.description %></p>
+                <!-- <p class="card-text"><%= blog.description %></p> -->
                 <p class="card-text">
-                    <small class="text-muted"><%= blog.location%></small>
+                    <small class="text-muted">Date: <%= blog.date.getDate() %>/<%= blog.date.getMonth() + 1 %>/<%= blog.date.getFullYear() %></small>
                 </p>
-                <a class="btn btn-primary" href="/blogs/<%=blog._id%>">View <%=blog.title%></a>
             </div>
-        </div>
-    </div>
+        </div>     
+    </div>     
+    <div class="row craddwn">
+        <div class="read">
+            <a style="margin-top: 10px;" class="btn mybtn btn-primary" href="/blogs/<%=blog._id%>"> Read blog</a>  
+        </div>  
+    </div>              
 </div>
 <% }%>
