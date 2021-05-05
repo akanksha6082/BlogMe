@@ -49,6 +49,7 @@ body{
     width: 100%;
     margin: 0 auto;
 }
+
 #navclr > .navbar-nav > .nav-link{
     color: #343a40;
     font-size:1.2em;
@@ -92,6 +93,18 @@ body{
     margin: 3px 0.5%;
     overflow: hidden;
     padding: 0 0;
+}
+#reviewcard{
+    height: auto;
+    min-width: 45%;
+}
+#myreview{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+    width: 100%;
+    height: auto;
 }
 #carr{
     padding: 0 0 ;

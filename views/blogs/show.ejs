@@ -17,19 +17,20 @@
             </ul>
             <%  if( currentUser && blog.author.equals(currentUser._id))  {%>
             <div class="card-body">
-                <a id = "mybtn" class="card-link btn btn-info" href="/blogs/<%=blog._id%>/edit">Edit</a>
+                <a style="margin-bottom: 5px;" class="card-link btn btn-info btn-block" href="/blogs/<%=blog._id%>/edit">Edit</a>
                 <form class="d-inline" action="/blogs/<%=blog._id%>?_method=DELETE" method="POST">
-                    <button id="mybtn" class="btn btn-danger">Delete</button>
+                    <button style="margin-bottom: 10px;" class="btn btn-danger btn-block">Delete</button>
                 </form>
             </div>
             <% } %>
     
         </div>        
     <div class="col-6" id="review">
+        <br>
         <% if(currentUser && !blog.author.equals(currentUser._id)){ %>
-        <h2>Review</h2>
+        <h2 style="margin-left: 33%;">REVIEW ME !</h2>
         <form action="/blogs/<%=blog._id%>/reviews" method="POST" class="mb-3">
-            <fieldset class="starability-basic">
+            <fieldset style="margin-left: 35%;" class="starability-basic">
                 <input type="radio" id="no-rate" class="input-no-rate" name="review[rating]" value="1" checked
                     aria-label="No rating." />
                 <input type="radio" id="first-rate1" name="review[rating]" value="1" />
@@ -53,24 +54,28 @@
             <button id="mybtn"  class="btn btn-success">Submit</button>
         </form>
         <% } %>
-        <% for(let review of blog.reviews) { %>
-        <div class="card mb-3 ">
-            <div class="card-body">
-                <h5 class="card-title"> <%= review.author.username%></h5>
-                <p class="starability-result" data-rating="<%=review.rating%>">
-                    Rated: <%= review.rating %> stars
-                </p>
-             
-                <p class="card-text">Review: <%= review.body %></p>
-                <%  if( currentUser && review.author.equals(currentUser._id))  {%>
-                <form action="/blogs/<%=blog._id%>/reviews/<%=review._id%>?_method=DELETE" method="POST">
-                    <button id="mybtn" class="btn btn-sm btn-danger">Delete</button>
-                </form>
-                <% } %>
-            </div>
-        </div>
-        <% } %>
     </div>
+    <div id="myreview">
+        <% for(let review of blog.reviews) { %>
+            <div class="card mb-3" id="reviewcard">
+                <div class="card-body">
+                    <h5 class="card-title"> <%= review.author.username%></h5>
+                    <p class="starability-result" data-rating="<%=review.rating%>">
+                        Rated: <%= review.rating %> stars
+                    </p>
+                    
+                    <p class="card-text">Review: <%= review.body %></p>
+                    <%  if( currentUser && review.author.equals(currentUser._id))  {%>
+                    <form action="/blogs/<%=blog._id%>/reviews/<%=review._id%>?_method=DELETE" method="POST">
+                        <button class="btn btn-danger btn-md ">Delete</button>
+                    </form>
+                    <% } %>
+                </div>
+            </div>
+            <% } %>
+    </div>
+   
+    
 </div>
 
 </div>

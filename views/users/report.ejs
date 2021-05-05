@@ -1,20 +1,21 @@
 <% layout('layouts/boilerplate')%>
-<div style="margin: 3px auto; margin-left: 25%;">
-<h1 style="color: red;"><u>Know Your Stats</u></h1>
+<h1 style="color: red;  margin-left: 50%;"><u>Know Your Stats</u></h1>
 <br>
-<h3>Username - <%= username %></h3>
-<h3>Email - <%= email%> </h3>
-
-<h3> Total no of blogs - <%= blog_list.length %> </h3>
+<div style="font-family:'Times New Roman', Times, serif; margin: 3px auto;  margin-left: 20%;">
+    <h2>Username - <%= username %></h2>
+    <h2>Email - <%= email%> </h2>
+    <h2> Total no of blogs - <%= blog_list.length %> </h2>
 </div>
+<br>
 <% for (let blog of blog_list){%>
-<div class="card" style="min-width: 80%; margin: 0 auto; margin-left: 10%;" mb-3>
+<div class="card" style="min-width: 80%; margin: 0 auto; margin-left: 20%;" mb-3>
     <div class="row" id="report">
-        <div style="margin-bottom: 20px ;" id="repImg">
+        <div style="margin-bottom: 20px ; height: 300px;">
             <img class="img-fluid" alt="" src="<%=blog.image%>">
         </div>
         <div id="repBody">
             <div class="card-body">
+                <br>
                 <br>
                 <h2 class="card-title">
                     <%= blog.title %>
@@ -29,7 +30,7 @@
                 <h5 style="color: rgb(255, 238, 0);"> Average Rating - <%= blog.avg_rating%></h5>
                 <br>
                 <h5>Date of creation - <%= blog.date %></h5>
-                <a id="mybtn" style="margin-bottom : 20px;"class="btn btn-primary" href="/blogs/<%=blog._id%>">Read Blog</a>
+                <a style="margin-bottom : 20px;"class="btn btn-primary" href="/blogs/<%=blog._id%>">Read Blog</a>
             </div>
         </div>
     </div>
